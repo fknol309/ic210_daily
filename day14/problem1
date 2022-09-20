@@ -1,0 +1,27 @@
+Suppose your given a list of student names and alpha codes followed by a list of grades. Read this information in, and print out the name of the student with the highest average for the given grades. The format of your input is demonstrated in this example:
+
+John Jeffery Jones m040101 85, 95, 22, 54;
+Sandra Smith m040201 99, 98;
+Xavier Xenon Junior m050400 78, 80, 82, 84, 86, 88, 90;
+For this input, your program would print out
+
+Sandra Smith had the highest average.
+A good way to approach this problem would be to write three successive programs:
+
+1. A program that reads in students whose name is just one word, and whose list of grades always consists of a single score. For example, input for this might look like:
+
+    Jones m040101 85
+    Smith m040201 99
+    Xenon m050400 78
+
+2. A program that reads in students whose names may consist of multiple words, but whose list of grades always consists of a single score. For example, input for this might look like:
+
+    John Jeffery Jones m040101 85
+    Sandra Smith m040201 99
+    Xavier Xenon m050400 78
+
+Hint: Remember that if S is an object of type string and c is an object of type char, then c + S is the string object you get by tacking the character c onto the beginning of S.
+
+3. A program to solve the full problem. :::
+
+
