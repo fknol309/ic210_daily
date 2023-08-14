@@ -23,9 +23,10 @@ int main()
             }
             break;
         // otherwise, days=30
-        default:
+/*        default:
             days = 30;
             break;
+*/
     }
     
     cout << days << endl;

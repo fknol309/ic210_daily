@@ -1,4 +1,4 @@
-#include <iostream>
+nt i = 0; i < 5; i #include <iostream>
 using namespace std;
 
 /**********************************************
@@ -40,63 +40,74 @@ int main() {
 /*********************************************
 function: transaction
 input: current balance (double)
-output: new balance (double)
+output: new balance (double
 
 side effects: 
-    asking user for action (withdraw or deposit)
-    asking user for amount
+    ask the user which action (withdraw or deposit)
+    ask the user for amount
 **********************************************/
 double transaction (double B) {
     string action;
-    double amount;
 
-    // ask user for action
-    cout << "action (withdraw or deposit): ";
-    cin  >> action;
+    cout << "withdraw or deposit: ";
+    cin >> action;
 
-    // ask user for amount
     cout << "amount: ";
-    cin  >> amount;
+    cin >> amt;
 
-    // add or take away from B
+    // conditional
     if (action == "withdraw") {
-        B -= amount;
+        B = B - amt;
     }
     else {
-        B += amount;
+        B = B + amt;
     }
 
-    return B
+    return B;
 }
 
 
 
 
-
 /*********************************************
-function: rate 
-input: B (double)
-output: new rate (double)
+function: rate
+input: current balance (double)
+output: rate of interest (double)
 *********************************************/
-double rate (double B) {
-    double r = 3 + ((int)B/1000)(.5);
+double rate(double B) {
+    double r;
+    r = 3 + (int)B/1000*(.5);
     return r;
 }
 
 
 /*********************************************
 function: compound
-input: r
-output: how much 1$ increased
+input: rate
+output: amount dollar is at end
 *********************************************/
-double compound (double r) {
-    double total = 1.0;
-    double r_perc = r/100;
+double compound (double rate) {
+    double amt;
+    double r = rate/100;
     for (int i = 0; i < 12; i++){
-        total = r_perc/12*total + total;
+        amt = amt + amt*r/12
     }
-    return total;
+    return amt;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

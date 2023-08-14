@@ -6,9 +6,9 @@ string get_team();
 
 
 int main() {
-    string team1, team2 = "Army";
-    team1 = get_team();
-    cout << "Go " << team1 << "!  Beat " << team2 << endl;
+    string first_team, team2 = "Army";
+    first_team = get_team();
+    cout << "Go " << first_team << "!  Beat " << team2 << endl;
     return 0;
 }
 

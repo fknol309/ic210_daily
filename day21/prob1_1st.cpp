@@ -1,12 +1,9 @@
 #include <iostream>
 using namespace std;
 
-/*****************************
-*******   Prototype   ******** 
-******************************/
+/* Prototype */
 void find_stats(double *, int);
 void print_pretty(double *B, double *diffs, int m);
-double * find_diffs(double* A, int n);
 
 
 int main() {
@@ -36,25 +33,23 @@ int main() {
 
     // create and print array of differences (A[i] - A[i-1])    
     // of consecutive elements
-    double *diffs = find_diffs(A, n);
-   
+    double *diffs = new double[n-1];
+    for (int i = 0; i < n-1; i++) {
+        diffs[i] = A[i+1] - A[i];
+        cout << diffs[i] << endl;
+    }
+    
     // print out diffs and array elements
     // 3  5  -1
     // \_/ \_/
     //  2  -6
     print_pretty(A, diffs, n);
 
-    delete [] A;
-    delete [] diffs;
+
 
     return 0;
 }
 
-/******************************
-*******    Functions    *******
-*******************************/
-
-// print stats from data
 void find_stats(double *A, int n) {
     // find minimum, maximum, average
     double min = A[0];
@@ -73,9 +68,11 @@ void find_stats(double *A, int n) {
     cout << "min: " << min << endl;
     cout << "max: " << max<< endl;
     cout << "avg: " << sum/n << endl;
+
+
 }
 
-// function to print the differences "pretty"
+
 void print_pretty(double *A, double *diffs, int n) {
 
     for (int i = 0; i < n; i++){
@@ -89,7 +86,7 @@ void print_pretty(double *A, double *diffs, int n) {
     cout << endl;
     
     cout << " ";
-    for (int i = 0; i < n-1; i++){
+    for (int i = 0; i < n; i++){
         if (diffs[i] >=10 || diffs[i] < 0) {
             cout << diffs[i] << " ";
         }
@@ -98,16 +95,5 @@ void print_pretty(double *A, double *diffs, int n) {
         }
     }
     cout << endl;
-    
-}
 
-double * find_diffs(double* A, int n) {
-    double *ptr;
-    diffs = new double[n-1];
-    for (int i = 0; i < n-1; i++) {
-        ptr[i] = A[i+1] - A[i];
-        cout << ptr[i] << endl;
-    }
-
-    return ptr;
 }
